@@ -1,0 +1,57 @@
+{
+  "type": "commonjs",
+  "name": "chovk",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run lint",
+      "npm run lint:fix",
+      "npm run format"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huutinhlg2d/chovkbotjs.git"
+  },
+  "author": "Minky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huutinhlg2d/chovkbotjs/issues"
+  },
+  "homepage": "https://github.com/huutinhlg2d/chovkbotjs#readme",
+  "dependencies": {
+    "@discordx/importer": "^1.2.2",
+    "discord.js": "^14.11.0",
+    "discordx": "^11.7.6",
+    "dotenv": "^16.0.3",
+    "reflect-metadata": "^0.1.13",
+    "ts-dotenv": "^0.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
+}
+
