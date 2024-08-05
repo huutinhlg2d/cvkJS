@@ -1,16 +1,16 @@
-import 'reflect-metadata'
+import 'reflect-metadata';
 
-import { DIService, tsyringeDependencyRegistryEngine } from 'discordx'
-import { container, instanceCachingFactory } from 'tsyringe'
+import { DIService, tsyringeDependencyRegistryEngine } from 'discordx';
+import { container, instanceCachingFactory } from 'tsyringe';
 
-import { loadEnv } from './env'
-import { Main } from './main'
+import { loadEnv } from './env';
+import { Main } from './main';
 
-loadEnv()
+loadEnv();
 
 DIService.engine = tsyringeDependencyRegistryEngine
   .setUseTokenization(true)
   .setCashingSingletonFactory(instanceCachingFactory)
-  .setInjector(container)
+  .setInjector(container);
 
-Main.start()
+Main.start();

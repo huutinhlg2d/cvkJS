@@ -1,8 +1,8 @@
-import { CommandInteraction } from 'discord.js'
-import { Discord, DIService, Slash } from 'discordx'
-import { container, injectable } from 'tsyringe'
+import { CommandInteraction } from 'discord.js';
+import { Discord, DIService, Slash } from 'discordx';
+import { container, injectable } from 'tsyringe';
 
-import { Database } from '../database'
+import { Database } from '../database';
 
 @Discord()
 @injectable()
@@ -16,16 +16,16 @@ export class Example {
     if (DIService.instance) {
       try {
         // resolve class
-        const clazz = container.resolve(Example)
+        const clazz = container.resolve(Example);
         // respond with class test
-        interaction.reply(`${clazz._database.query()}, same class: ${clazz === this}`)
+        interaction.reply(`${clazz._database.query()}, same class: ${clazz === this}`);
         // interaction.reply(new Date().toUTCString())
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     } else {
       // warn: TSyringe is not used
-      interaction.reply('Not using TSyringe')
+      interaction.reply('Not using TSyringe');
     }
   }
 }

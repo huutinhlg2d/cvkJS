@@ -1,15 +1,15 @@
-import { singleton } from 'tsyringe'
+import { singleton } from 'tsyringe';
 
 @singleton()
 export class Database {
-  database: string
+  database: string;
 
   constructor() {
-    console.log('I am database')
-    this.database = 'connected'
+    console.log('I am database');
+    this.database = 'connected';
   }
 
   query() {
-    return this.database
+    return this.database;
   }
 }
